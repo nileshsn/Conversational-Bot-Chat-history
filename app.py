@@ -11,13 +11,9 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import os
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-
-# Set up Hugging Face embeddings
-os.environ['HF_TOKEN'] = os.getenv("HF_TOKEN")
+# Set up Hugging Face embeddings with a token
+os.environ['HF_TOKEN'] = "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"
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # Set up Streamlit app
@@ -129,7 +125,3 @@ if api_key:
             st.write("Chat History:", get_session_history(session_id).messages)
 else:
     st.warning("Please enter the Groq API Key")
-
-
-
-
