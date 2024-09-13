@@ -1,15 +1,8 @@
 langchain
-langchain-chroma
-langchain-community
-langchain-huggingface
-langchain-groq
-streamlit
 python-dotenv
-chromadb
+pypdf
 huggingface-hub
-PyPDF2
-pymupdf
-sentence_transformers
-faiss-cpu
-duckdb
-pandas
+faiss-cpu  # Using FAISS for vector store instead of Chroma
+langchain_huggingface
+gradio
+transformers
