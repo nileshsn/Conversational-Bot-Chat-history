@@ -1,5 +1,7 @@
 ## RAG Q&A Conversation With PDF Including Chat History
 import streamlit as st
+from dotenv import load_dotenv  
+import os
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.vectorstores import FAISS
@@ -10,10 +12,12 @@ from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Set up Hugging Face embeddings with a token
-os.environ['HF_TOKEN'] = "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"
+os.environ['HF_TOKEN'] = os.getenv('HF_TOKEN')  
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # Set up Streamlit app
@@ -21,7 +25,7 @@ st.title("Conversational RAG With PDF Uploads and Chat History")
 st.write("Upload PDFs and chat with their content")
 
 # Input the Groq API Key
-api_key = "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"
+api_key = os.getenv('GROQ_API_KEY')  
 
 # Check if Groq API key is provided
 if api_key:
