@@ -13,7 +13,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
-# Load environment variables from .env file
+# Load environment variables from .env files
 load_dotenv()
 
 # Set up Hugging Face embeddings with a token
