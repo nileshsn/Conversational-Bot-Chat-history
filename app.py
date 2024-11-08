@@ -129,3 +129,9 @@ if api_key:
             st.write("Chat History:", get_session_history(session_id).messages)
 else:
     st.warning("Please enter the Groq API Key")
+
+
+
+
+# git rm --cached .env
+# git commit -m "Remove .env file from tracking"
